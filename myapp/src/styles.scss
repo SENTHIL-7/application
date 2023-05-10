@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "@angular/material/prebuilt-themes/indigo-pink.css";
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+::selection {
+    background-color: grey;
+    color: white;
+}
+
+mat-icon {
+    cursor: pointer;
+}
+
+.formFeild .mat-mdc-form-field {
+    --mdc-shape-small: 0px;
+}
+
+.formFeild .mat-mdc-form-field-flex {
+    height: 35px !important;
+}
+
+.formFeild .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.formFeild .mat-mdc-form-field-infix {
+    min-height: 35px;
+}
+
+.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.snack-bar-default.mat-mdc-snack-bar-container {
+    --mat-mdc-snack-bar-button-color: #ff4081;
+    --mdc-snackbar-container-color: #333333;
+    --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
+}
+
+.snack-bar-success.mat-mdc-snack-bar-container {
+    --mat-mdc-snack-bar-button-color: #ff4081;
+    --mdc-snackbar-container-color: green;
+    --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
+}
+
+.snack-bar-info.mat-mdc-snack-bar-container {
+    --mat-mdc-snack-bar-button-color: #ff4081;
+    --mdc-snackbar-container-color: blue;
+    --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
+}
+
+.snack-bar-error.mat-mdc-snack-bar-container {
+    --mat-mdc-snack-bar-button-color: #ff4081;
+    --mdc-snackbar-container-color: red;
+    --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
+}
+
+.snack-bar-warning.mat-mdc-snack-bar-container {
+    --mat-mdc-snack-bar-button-color: #ff4081;
+    --mdc-snackbar-container-color: yellow;
+    --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
+}
+

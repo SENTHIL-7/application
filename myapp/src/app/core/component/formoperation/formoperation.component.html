@@ -1,0 +1,126 @@
+<div class="container">
+  <div style="margin: 10px;" fxLayoutAlign="end end"><button mat-raised-button color="primary"
+      (click)="onBack()">Back</button></div>
+  <div class="page-container">
+    <mat-radio-group aria-label="Select an option" (change)='onExternal()'>
+      <mat-radio-button value=true checked>Internal Manager</mat-radio-button>
+      <mat-radio-button value=false>External Manager</mat-radio-button>
+    </mat-radio-group>
+    <form [formGroup]="placementForm">
+      <div *ngIf="isExternal" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5%" fxLayoutGap.lt-md="0%">
+        <div fxFlex="50%" fxLayout="row" fxLayout.lt-md="column">
+          <mat-label fxFlex="40%">Email</mat-label>
+          <mat-form-field fxFlex="60%" appearance="outline">
+            <input matInput formControlName="email">
+            <mat-error *ngIf="placementForm?.get('email')?.hasError('required')">
+              This field is required
+            </mat-error>
+            <mat-error *ngIf="placementForm?.get('email')?.hasError('email')">
+              invalid email
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50%" fxLayout="row" fxLayout.lt-md="column"></div>
+      </div>
+      <!--Name && Job Title-->
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5%" fxLayoutGap.lt-md="0%">
+        <div fxFlex="50%" fxLayout="row" fxLayout.lt-md="column">
+          <mat-label fxFlex="40%">Name</mat-label>
+          <mat-form-field fxFlex="60%" appearance="outline">
+            <input matInput formControlName="name">
+            <mat-error *ngIf="placementForm?.get('name')?.hasError('required')">
+              This field is required
+            </mat-error>
+            <mat-error *ngIf="placementForm?.get('name')?.hasError('pattern')">
+              not valid
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50%" fxLayout="row" fxLayout.lt-md="column">
+          <mat-label fxFlex="40%">Job Title</mat-label>
+          <mat-form-field fxFlex="60%" appearance="outline">
+            <mat-select formControlName="jopTitleId">
+              <mat-option [value]="item?.id" *ngFor="let item of jopTitle">{{item?.name}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="placementForm?.get('jopTitleId')?.hasError('required')">
+              This field is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- start Date && End Date-->
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5%" fxLayoutGap.lt-md="0%">
+        <div fxFlex="50%" fxLayout="row" fxLayout.lt-md="column">
+          <mat-label fxFlex="40%">Start Date</mat-label>
+          <mat-form-field fxFlex="60%" appearance="outline">
+            <input matInput [matDatepicker]="picker" formControlName="startDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error
+              *ngIf="placementForm?.get('startDate')?.hasError('required')&&!placementForm?.get('startDate')?.hasError('matDatepickerParse')">
+              This field is required
+            </mat-error>
+            <mat-error
+              *ngIf="placementForm?.get('startDate')?.hasError('matDatepickerParse')&&placementForm?.get('startDate')?.hasError('required')">
+              not valid
+            </mat-error>
+            <mat-error *ngIf="placementForm?.get('startDate')?.hasError('matDatepickerMax')">
+              Error
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50%" fxLayout="row" fxLayout.lt-md="column">
+          <mat-label fxFlex="40%">End Date</mat-label>
+          <mat-form-field fxFlex="60%" appearance="outline">
+            <input matInput [matDatepicker]="picker2" formControlName="endDate"
+              [min]="placementForm.get('startDate')?.value">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+            <mat-error
+              *ngIf="placementForm?.get('endDate')?.hasError('required')&&!placementForm?.get('endDate')?.hasError('matDatepickerParse')">
+              This field is required
+            </mat-error>
+            <mat-error
+              *ngIf="placementForm?.get('endDate')?.hasError('matDatepickerParse')&&placementForm?.get('endDate')?.hasError('required')">
+              not valid
+            </mat-error>
+            <mat-error *ngIf="placementForm?.get('endDate')?.hasError('matDatepickerMin')">
+              Error
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- status -->
+      <div *ngIf="placementForm.get('status')" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5%"
+        fxLayoutGap.lt-md="0%">
+        <div fxFlex="50%" fxLayout="row" fxLayout.lt-md="column">
+          <mat-label fxFlex="40%">status</mat-label>
+          <mat-form-field fxFlex="60%" appearance="outline">
+            <mat-select formControlName="status">
+              <mat-option [value]="item?.isActive" *ngFor="let item of statusValue">{{item?.name}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="placementForm?.get('status')?.hasError('required')">
+              This field is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50%" fxLayout="row" fxLayout.lt-md="column">
+        </div>
+
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <button mat-raised-button color="primary" (click)="onSubmit(placementForm)">Submit</button>
+      </div>
+    </form>
+
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <button mat-button (click)="onEdit()">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-button (click)="onview()">
+      <mat-icon>description</mat-icon>
+    </button>
+  </div>
+</div>

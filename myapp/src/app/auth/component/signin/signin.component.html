@@ -1,0 +1,26 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center center">
+  <form class="formFeild" [formGroup]="loginForm">
+    <div fxLayout="column" fxFlex="300px" fxLayoutGap="10px">
+      <h2>SignIn</h2>
+      <mat-label>User Email</mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="loginForm?.get('email')?.hasError('required')">
+          {{message?.FIELD_REQUIRED}}
+        </mat-error>
+      </mat-form-field>
+      <mat-label>Password</mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Password" formControlName="password" [type]="hide? 'password':'text'">
+        <button matSuffix mat-icon-button
+          (click)="hide=!hide"><mat-icon>{{hide?'visibility_off':'visibility'}}</mat-icon></button>
+        <mat-error *ngIf="loginForm?.get('password')?.hasError('required')">
+          {{message?.FIELD_REQUIRED}}
+        </mat-error>
+      </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <button mat-raised-button color="primary" (click)="signIn()">SignIn</button>
+      </div>
+    </div>
+  </form>
+</div>

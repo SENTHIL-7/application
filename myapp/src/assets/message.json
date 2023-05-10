@@ -1,0 +1,19 @@
+{
+  "FIELD_REQUIRED": "This field is required",
+  "INVALID_FIELD": "This field is invalid",
+  "INVALID_NAME": "Please enter a valid name!",
+  "INVALID_EMAIL": "Please enter a valid email!",
+  "INVALID_PASSWORD": "invalid password!",
+  "PASSWORD_MISMATCH": "password does not match!",
+  "EMAIL_EXISTS": "Email already exist!",
+  "DATA_SUCCESS": "Data added successfully!",
+  "DATA_FAILURE": "Failed to add data!",
+  "USER_SUCCESS": "User added successfully!",
+  "USER_FAILURE": "Failed to add user!",
+  "DELETE": "Are you sure you want to delete?",
+  "CANCEL": "Are you sure you want to cancel?",
+  "DATA_SAVE": "Data save successfully!",
+  "DATA_UPDATE": "Data update successfully!",
+  "ERROR": "Error",
+  "DATA_UNSAVED": "You are unsaved changes..!Are you sure to leave this page?"
+}

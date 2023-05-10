@@ -1,0 +1,19 @@
+.box1,
+.box2 {
+  width: 200px;
+  height: 200px;
+}
+
+.box1 {
+  background-color: red;
+}
+
+.box2 {
+  background-color: green;
+}
+
+.container {
+  // width: 1000px;
+  border: 2px solid black;
+  // flex-wrap: wrap;
+}

@@ -1,0 +1,424 @@
+{
+  "users": [
+    {
+      "name": "senthil",
+      "jopTitleId": 1,
+      "startDate": "2015-12-31T18:30:00.000Z",
+      "endDate": "2024-12-31T18:30:00.000Z",
+      "status": "Inactive",
+      "id": 1
+    },
+    {
+      "name": "vinoth",
+      "jopTitleId": 2,
+      "startDate": "2015-12-31T18:30:00.000Z",
+      "endDate": "2017-12-31T18:30:00.000Z",
+      "status": "Inactive",
+      "id": 2
+    },
+    {
+      "name": "surya",
+      "jopTitleId": 2,
+      "startDate": "2023-04-01T18:30:00.000Z",
+      "endDate": "2024-08-01T18:30:00.000Z",
+      "status": "Inactive",
+      "id": 3
+    },
+    {
+      "name": "riyas",
+      "jopTitleId": 2,
+      "startDate": "2023-02-28T18:30:00.000Z",
+      "endDate": "2024-08-01T18:30:00.000Z",
+      "status": "Active",
+      "id": 4
+    },
+    {
+      "name": "richard",
+      "jopTitleId": 2,
+      "startDate": "2023-02-28T18:30:00.000Z",
+      "endDate": "2024-08-01T18:30:00.000Z",
+      "status": "Active",
+      "id": 5
+    },
+    {
+      "name": "kumar",
+      "jopTitleId": 2,
+      "startDate": "2023-02-28T18:30:00.000Z",
+      "endDate": "2024-08-01T18:30:00.000Z",
+      "status": "Active",
+      "id": 6
+    },
+    {
+      "name": "mani",
+      "jopTitleId": 1,
+      "startDate": "2023-02-28T18:30:00.000Z",
+      "endDate": "2024-08-01T18:30:00.000Z",
+      "status": "Active",
+      "id": 7
+    },
+    {
+      "name": "rajesh",
+      "jopTitleId": 1,
+      "startDate": "2023-02-28T18:30:00.000Z",
+      "endDate": "2024-08-01T18:30:00.000Z",
+      "status": "Active",
+      "id": 8
+    },
+    {
+      "name": "micheal",
+      "jopTitleId": 2,
+      "startDate": "2023-03-14T18:30:00.000Z",
+      "endDate": "2024-06-29T18:30:00.000Z",
+      "status": "Active",
+      "id": 9
+    },
+    {
+      "name": "varun",
+      "jopTitleId": 1,
+      "startDate": "2023-02-28T18:30:00.000Z",
+      "endDate": "2024-06-29T18:30:00.000Z",
+      "status": "Active",
+      "id": 10
+    },
+    {
+      "name": "madhan",
+      "jopTitleId": 1,
+      "startDate": "2023-02-28T18:30:00.000Z",
+      "endDate": "2024-06-29T18:30:00.000Z",
+      "status": "Active",
+      "id": 11
+    },
+    {
+      "name": "muthuraj",
+      "jopTitleId": 1,
+      "startDate": "2023-02-28T18:30:00.000Z",
+      "endDate": "2024-06-29T18:30:00.000Z",
+      "status": "Active",
+      "id": 12
+    },
+    {
+      "name": "suresh",
+      "jopTitleId": 1,
+      "startDate": "2023-04-01T18:30:00.000Z",
+      "endDate": "2023-04-17T18:30:00.000Z",
+      "id": 13
+    },
+    {
+      "name": "rahul",
+      "jopTitleId": 2,
+      "startDate": "2023-04-01T18:30:00.000Z",
+      "endDate": "2023-04-17T18:30:00.000Z",
+      "id": 14
+    },
+    {
+      "name": "sivavinoth",
+      "jopTitleId": 2,
+      "startDate": "2023-04-01T18:30:00.000Z",
+      "endDate": "2023-04-17T18:30:00.000Z",
+      "id": 15
+    },
+    {
+      "name": "sundar",
+      "jopTitleId": 2,
+      "startDate": "2023-04-01T18:30:00.000Z",
+      "endDate": "2023-04-17T18:30:00.000Z",
+      "id": 16
+    },
+    {
+      "name": "sathish",
+      "jopTitleId": 2,
+      "startDate": "2023-04-01T18:30:00.000Z",
+      "endDate": "2023-04-17T18:30:00.000Z",
+      "id": 17
+    },
+    {
+      "name": "muthuraj",
+      "jopTitleId": 1,
+      "startDate": "2023-04-03T18:30:00.000Z",
+      "endDate": "2023-04-17T18:30:00.000Z",
+      "id": 18,
+      "status": "Active"
+    },
+    {
+      "name": "tharun",
+      "jopTitleId": 1,
+      "startDate": "2023-04-13T18:30:00.000Z",
+      "endDate": "2024-06-10T18:30:00.000Z",
+      "id": 19,
+      "status": "Active"
+    },
+    {
+      "name": "vignesh",
+      "jopTitleId": 2,
+      "startDate": "2023-04-13T18:30:00.000Z",
+      "endDate": "2024-06-10T18:30:00.000Z",
+      "id": 20,
+      "status": "Active"
+    },
+    {
+      "name": "arun",
+      "jopTitleId": 2,
+      "startDate": "2015-12-31T18:30:00.000Z",
+      "endDate": "2016-12-31T18:30:00.000Z",
+      "id": 21,
+      "status": "Active"
+    },
+    {
+      "name": "david",
+      "jopTitleId": 2,
+      "startDate": "2018-12-31T18:30:00.000Z",
+      "endDate": "2020-12-31T18:30:00.000Z",
+      "id": 22,
+      "status": "Active"
+    },
+    {
+      "name": "balu",
+      "jopTitleId": 1,
+      "startDate": "2023-04-01T18:30:00.000Z",
+      "endDate": "2023-04-16T18:30:00.000Z",
+      "id": 23
+    },
+    {
+      "name": "sathish",
+      "jopTitleId": 1,
+      "startDate": "2023-04-19T18:30:00.000Z",
+      "endDate": "2023-04-22T18:30:00.000Z",
+      "id": 24
+    },
+    {
+      "name": "sathish",
+      "jopTitleId": 2,
+      "startDate": "2023-04-05T18:30:00.000Z",
+      "endDate": "2023-04-10T18:30:00.000Z",
+      "id": 25
+    }
+  ],
+  "backup": [
+    {
+      "id": 1,
+      "name": "senthil",
+      "jopTitleId": 1,
+      "startDate": "2023-04-05T18:30:00.000Z",
+      "endDate": "2023-04-15T18:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "vinoth",
+      "jopTitleId": 2,
+      "startDate": "2023/2/01",
+      "endDate": "2024/2/01"
+    },
+    {
+      "id": 3,
+      "name": "surya",
+      "jopTitleId": 1,
+      "startDate": "2023/2/01",
+      "endDate": "2024/2/01"
+    },
+    {
+      "id": 4,
+      "name": "riyas",
+      "jopTitleId": 1,
+      "startDate": "2023/2/01",
+      "endDate": "2024/2/01"
+    },
+    {
+      "id": 5,
+      "name": "richard",
+      "jopTitleId": 2,
+      "startDate": "2023/2/01",
+      "endDate": "2024/2/01"
+    },
+    {
+      "id": 6,
+      "name": "kumar",
+      "jopTitleId": 1,
+      "startDate": "2023/2/01",
+      "endDate": "2024/2/01"
+    },
+    {
+      "id": 7,
+      "name": "mani",
+      "jopTitleId": 2,
+      "startDate": "2023/2/01",
+      "endDate": "2024/2/01"
+    },
+    {
+      "name": "rajesh",
+      "jopTitleId": 2,
+      "startDate": "2023/3/17",
+      "endDate": "2023/3/20",
+      "id": 8
+    },
+    {
+      "name": "micheal",
+      "jopTitleId": 2,
+      "startDate": "2023/4/14",
+      "endDate": "2023/4/19",
+      "id": 9
+    },
+    {
+      "name": "varun",
+      "jopTitleId": 2,
+      "startDate": "2023/4/14",
+      "endDate": "2023/4/19",
+      "id": 10
+    },
+    {
+      "name": "ram",
+      "jopTitleId": 2,
+      "startDate": "2023/4/14",
+      "endDate": "2023/4/19",
+      "id": 11
+    },
+    {
+      "name": "arun",
+      "jopTitleId": 2,
+      "startDate": "2023/4/14",
+      "endDate": "2023/4/19",
+      "id": 12
+    },
+    {
+      "name": "sundar",
+      "jopTitleId": 2,
+      "startDate": "2023/4/14",
+      "endDate": "2023/4/19",
+      "id": 13
+    },
+    {
+      "name": "gokul",
+      "jopTitleId": 2,
+      "startDate": "2023/4/14",
+      "endDate": "2023/4/19",
+      "id": 14
+    },
+    {
+      "name": "makesh",
+      "jopTitleId": 2,
+      "startDate": "2023/4/14",
+      "endDate": "2023/4/19",
+      "id": 15
+    },
+    {
+      "name": "muthu",
+      "jopTitleId": 2,
+      "startDate": "2023/4/14",
+      "endDate": "2023/4/19",
+      "id": 16
+    },
+    {
+      "name": "sathish",
+      "jopTitleId": 1,
+      "startDate": "2023/4/11",
+      "endDate": "2023/4/17",
+      "id": 17
+    },
+    {
+      "name": "rohit",
+      "jopTitleId": 1,
+      "startDate": "2023/4/11",
+      "endDate": "2023/4/17",
+      "id": 18
+    },
+    {
+      "name": "david",
+      "jopTitleId": 2,
+      "startDate": "2023/4/22",
+      "endDate": "2023/4/24",
+      "id": 19
+    },
+    {
+      "name": "siva",
+      "jopTitleId": 2,
+      "startDate": "2023/4/08",
+      "endDate": "2023/4/10",
+      "id": 20
+    },
+    {
+      "name": "ramesh",
+      "jopTitleId": 2,
+      "startDate": "2023/4/08",
+      "endDate": "2023/4/10",
+      "id": 21
+    }
+  ],
+  "backup1": [
+    {
+      "id": 1,
+      "name": "senthil",
+      "jopTitleId": 1,
+      "startDate": "2023/2/01",
+      "endDate": "2024/2/01"
+    },
+    {
+      "id": 2,
+      "name": "vinoth",
+      "jopTitleId": 2,
+      "startDate": "2023/2/01",
+      "endDate": "2024/2/01"
+    },
+    {
+      "id": 3,
+      "name": "surya",
+      "jopTitleId": 1,
+      "startDate": "2023/2/01",
+      "endDate": "2024/2/01"
+    },
+    {
+      "id": 4,
+      "name": "riyas",
+      "jopTitleId": 1,
+      "startDate": "2023/2/01",
+      "endDate": "2024/2/01"
+    },
+    {
+      "id": 5,
+      "name": "richard",
+      "jopTitleId": 2,
+      "startDate": "2023/2/01",
+      "endDate": "2024/2/01"
+    },
+    {
+      "id": 6,
+      "name": "kumar",
+      "jopTitleId": 1,
+      "startDate": "2023/2/01",
+      "endDate": "2024/2/01"
+    },
+    {
+      "id": 7,
+      "name": "mani",
+      "jopTitleId": 2,
+      "startDate": "2023/2/01",
+      "endDate": "2024/2/01"
+    },
+    {
+      "name": "rajesh",
+      "jopTitleId": 2,
+      "startDate": "2023/3/17",
+      "endDate": "2023/3/20",
+      "id": 8
+    },
+    {
+      "name": "jasper",
+      "jopTitleId": 1,
+      "startDate": "2023/3/04",
+      "endDate": "2023/3/28",
+      "id": 9
+    },
+    {
+      "name": "selva",
+      "jopTitleId": 1,
+      "startDate": "2023/3/04",
+      "endDate": "2023/3/28",
+      "id": 10
+    },
+    {
+      "name": "sam",
+      "jopTitleId": 1,
+      "startDate": "2023/3/02",
+      "endDate": "2023/3/28",
+      "id": 11
+    }
+  ]
+}

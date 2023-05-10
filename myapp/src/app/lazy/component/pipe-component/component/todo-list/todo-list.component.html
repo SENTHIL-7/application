@@ -1,0 +1,18 @@
+<div class="container">
+  <label for="search-term">Search</label>
+  <input placeholder="Enter term" (input)="updateSearch($event)" id="search-term">
+  <div class="para" *ngFor="let result of results" [innerHTML]="result.summary | highlight: searchTerm"></div>
+  <br><mat-divider></mat-divider><br>
+  <h3>custom append pipe</h3>
+  <div>
+    {{'senthil' | append : 'kumar'}}
+  </div>
+  <br>
+  <mat-divider></mat-divider>
+  <br>
+  <app-sort></app-sort>
+  <br>
+  <mat-divider></mat-divider>
+  <br>
+  <app-pipe-filter></app-pipe-filter>
+</div>

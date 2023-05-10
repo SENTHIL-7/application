@@ -1,0 +1,21 @@
+.logo a {
+    color: white;
+    text-decoration: none;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mynav a {
+    margin-right: 10px;
+}
+
+// =======================
+.menu-spacer {
+    flex: 1 1 auto;
+}
+.navBar .nav-active {
+    color: violet ;
+}

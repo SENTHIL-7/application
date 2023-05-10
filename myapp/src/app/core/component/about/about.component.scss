@@ -1,0 +1,36 @@
+h1 {
+    color: red;
+}
+
+.container {
+    margin: 20px;
+}
+
+button {
+    margin: 5px;
+}
+
+.defaultColor {
+    background-color: gray !important;
+
+}
+
+.successColor {
+    background-color: green !important;
+}
+
+.errorColor {
+    background-color: red !important;
+}
+
+.warningColor {
+    background-color: yellow !important;
+}
+
+.infoColor {
+    background-color: blue !important;
+}
+
+.back {
+    background-color: rgb(2, 5, 5);
+}

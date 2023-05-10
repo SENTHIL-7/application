@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="add">
+    <input [(ngModel)]="userName">
+    <button mat-button (click)="addUser()">ADD</button>
+  </div>
+  <div class="container" *ngFor="let user of users | filter : 'gender' : 'M'">
+    {{user.name }}
+  </div>
+</div>

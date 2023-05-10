@@ -1,0 +1,46 @@
+<div>
+
+  <mat-toolbar color="primary" class="navbarContainer">
+    <mat-toolbar-row class="navBar">
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <!-- <span class="menu-spacer"></span> -->
+      <div class="logo">
+        <a routerLink="/app/home">MyApp</a>
+      </div>
+      <div class="mynav" fxShow="true" fxHide.lt-md>
+        <!-- <a mat-button class="fw-bold" routerLinkActive="nav-active" routerLink="/app/home">Home</a> -->
+        <a mat-button routerLinkActive="nav-active" routerLink="/app/snackbar">Snackbar</a>
+        <a mat-button routerLinkActive="nav-active" routerLink="/app/employee">menu3</a>
+        <a mat-button routerLinkActive="nav-active" routerLink="/app/employees">employee</a>
+        <a mat-button routerLinkActive="nav-active" routerLink="/app/placement">placement</a>
+        <a mat-button routerLinkActive="nav-active" routerLink="/app/changepwd">changepwd</a>
+        <a mat-button routerLinkActive="nav-active" routerLink="/app/lazy/pipe">pipe</a>
+        <a mat-button routerLinkActive="nav-active" routerLink="/signin">logout</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <a (click)="sidenav.toggle()" mat-list-item>Close</a>
+        <a mat-list-item routerLink="/app/home">home</a>
+        <a mat-list-item routerLink="/app/snackbar">Snackbar</a>
+        <a mat-list-item routerLink="/app/employee">menu3</a>
+        <a mat-list-item routerLink="/app/employees">Employee</a>
+        <a mat-list-item routerLink="/app/placement">placement</a>
+        <a mat-list-item routerLink="/app/changepwd">changepwd</a>
+        <a mat-list-item routerLink="/app/lazy/pipe">pipe</a>
+        <a mat-list-item routerLink="/signin">logout</a>
+        <a (click)="sidenav.toggle()" mat-list-item routerLink="/app/form">form</a>
+        <a (click)="sidenav.toggle()" mat-list-item routerLink="/app/observable">observable</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <div style="height: 88vh;">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
