@@ -46,7 +46,7 @@ fdescribe('DynTableComponent', () => {
     expect(component.displayedColumns).toEqual(expectedDisplayedColumns)
   });
   it('should set displayedColumns as undefined when data.columns is undefined', () => {
-    // component.data = { columns: undefined };
+    component.data= undefined ;
     component.ngOnChanges();
 
     expect(component.displayedColumns).toBeUndefined();
