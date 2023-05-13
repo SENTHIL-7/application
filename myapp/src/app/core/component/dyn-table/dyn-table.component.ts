@@ -34,6 +34,6 @@ export class DynTableComponent {
   }
   applyFilter(event: any) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    // this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }

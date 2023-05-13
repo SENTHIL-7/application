@@ -10,6 +10,9 @@ export class MyBgColorDirective {
   ngOnInit() {
     this.el.nativeElement.style.backgroundColor = this.appMyBgColor
   }
+
+}
+
   // @HostListener('mouseenter') onMouseEnter() {
   //   this.highlight(this.appMyBgColor || 'red');
   // }
@@ -17,4 +20,3 @@ export class MyBgColorDirective {
   // private highlight(color: string) {
   //   this.el.nativeElement.style.backgroundColor = color
   // }
-}

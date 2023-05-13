@@ -46,7 +46,6 @@ import { MatTableModule } from '@angular/material/table';
 // flex-layout
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
-// import { FormsModule } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({

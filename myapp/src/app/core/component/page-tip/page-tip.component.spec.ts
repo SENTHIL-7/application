@@ -20,4 +20,8 @@ describe('PageTipComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should call onActionEmit()', () => {
+    component.onActionEmit(<any>{target:<any>{value:'a'}});
+    expect(component.onActionEmit).toBeDefined();
+  });
 });

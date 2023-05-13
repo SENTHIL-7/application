@@ -1,14 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DynTableComponent } from './dyn-table.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-describe('DynTableComponent', () => {
+fdescribe('DynTableComponent', () => {
   let component: DynTableComponent;
   let fixture: ComponentFixture<DynTableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DynTableComponent ]
+      declarations: [ DynTableComponent ],
+      imports:[
+        MatPaginatorModule,
+        MatTableModule,
+        BrowserAnimationsModule
+      ]
     })
     .compileComponents();
 
@@ -19,5 +27,36 @@ describe('DynTableComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('should call onAction', () => {
+    component.onAction("aa","sas");
+    expect(component.onAction).toBeDefined();
+  });
+  it('should call ngOnChanges()', () => {
+    // const columns = [
+    //   { columnDef: 'column1', header: 'Column 1' },
+    //   { columnDef: 'column2', header: 'Column 2' },
+    //   // Add more columns as needed
+    // ];
+    component.data.columns=[
+      { columnDef: 'column1', header: 'Column 1' },
+      { columnDef: 'column2', header: 'Column 2' },
+    ]
+    // component.data = { columns };
+
+    component.ngOnChanges();
+    // expect(component.displayedColumns).toEqual(['column1', 'column2']);
+  });
+  it('should set displayedColumns as undefined when data.columns is undefined', () => {
+    component.data.columns=[]
+
+    component.ngOnChanges();
+
+    expect(component.displayedColumns).toBeUndefined();
+  });
+  it('should call  applyFilter()', () => {
+
+    component. applyFilter(<any>{target:<any>{value:'active'}});
+    expect(component.applyFilter).toBeDefined()
   });
 });

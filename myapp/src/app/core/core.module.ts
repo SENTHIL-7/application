@@ -12,11 +12,11 @@ import { TableComponent } from './component/table/table.component';
 import { FormoperationComponent } from './component/formoperation/formoperation.component';
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import { ObservableComponent } from './component/observable/observable.component';
-import { MyBgColorDirective } from './directive/myBgColor/my-bg-color.directive';
-import { MyFxLayoutDirective } from './directive/mgFlexLayout/my-fx-layout.directive';
-import { MyFxLayoutAlignDirective } from './directive/myFlexLayoutAlign/my-fx-layout-align.directive';
+// import { MyBgColorDirective } from './directive/myBgColor/my-bg-color.directive';
+// import { MyFxLayoutDirective } from './directive/mgFlexLayout/my-fx-layout.directive';
+// import { MyFxLayoutAlignDirective } from './directive/myFlexLayoutAlign/my-fx-layout-align.directive';
 import { FxLayoutComponent } from './component/conceptExecutions/directives component/fx-layout/fx-layout.component';
-import { MyButtonDirective } from './directive/myButton/my-button.directive';
+// import { MyButtonDirective } from './directive/myButton/my-button.directive';
 import { PlacementTableComponent } from './component/placement/component/placement-table/placement-table.component';
 import { PlacementsComponent } from './component/placement/component/placements/placements.component';
 import { PlacementFormComponent } from './component/placement/component/placement-form/placement-form.component';
@@ -39,11 +39,11 @@ import { DynTableComponent } from './component/dyn-table/dyn-table.component';
     FormoperationComponent,
     NotFoundComponent,
     ObservableComponent,
-    MyBgColorDirective,
-    MyFxLayoutDirective,
+    // MyBgColorDirective,
+    // MyFxLayoutDirective,
     FxLayoutComponent,
-    MyFxLayoutAlignDirective,
-    MyButtonDirective,
+    // MyFxLayoutAlignDirective,
+    // MyButtonDirective,
     PlacementTableComponent,
     PlacementsComponent,
     PlacementFormComponent,

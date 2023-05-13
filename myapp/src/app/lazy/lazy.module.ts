@@ -8,10 +8,10 @@ import { MaterialModule } from '../material/material.module';
 import { PipeFilterComponent } from './component/pipe-component/component/pipe-filter/pipe-filter.component';
 import { SortComponent } from './component/pipe-component/component/sort/sort.component';
 import { TodoListComponent } from './component/pipe-component/component/todo-list/todo-list.component';
-import { FilterPipe } from './component/pipe-component/pipe/filter.pipe';
-import { MySortPipe } from './component/pipe-component/pipe/my-sort.pipe';
-import { HighlightPipe } from './component/pipe-component/pipe/highlight.pipe';
-import { AppendPipe } from './component/pipe-component/pipe/append.pipe';
+// import { FilterPipe } from './component/pipe-component/pipe/filter.pipe';
+// import { MySortPipe } from './component/pipe-component/pipe/my-sort.pipe';
+// import { HighlightPipe } from './component/pipe-component/pipe/highlight.pipe';
+// import { AppendPipe } from './component/pipe-component/pipe/append.pipe';
 
 
 @NgModule({
@@ -22,10 +22,10 @@ import { AppendPipe } from './component/pipe-component/pipe/append.pipe';
     PipeFilterComponent,
     SortComponent,
     TodoListComponent,
-    FilterPipe,
-    MySortPipe,
-    HighlightPipe,
-    AppendPipe
+    // FilterPipe,
+    // MySortPipe,
+    // HighlightPipe,
+    // AppendPipe
   ],
   imports: [
     CommonModule,
