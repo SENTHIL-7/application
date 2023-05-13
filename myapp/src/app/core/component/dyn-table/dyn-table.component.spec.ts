@@ -33,23 +33,20 @@ fdescribe('DynTableComponent', () => {
     expect(component.onAction).toBeDefined();
   });
   it('should call ngOnChanges()', () => {
-    // const columns = [
-    //   { columnDef: 'column1', header: 'Column 1' },
-    //   { columnDef: 'column2', header: 'Column 2' },
-    //   // Add more columns as needed
-    // ];
-    component.data.columns=[
+    const columns = [
       { columnDef: 'column1', header: 'Column 1' },
       { columnDef: 'column2', header: 'Column 2' },
-    ]
-    // component.data = { columns };
+    ];
+
+    component.data = { columns };
 
     component.ngOnChanges();
-    // expect(component.displayedColumns).toEqual(['column1', 'column2']);
+
+    const expectedDisplayedColumns = columns.map(x => x.columnDef);
+    expect(component.displayedColumns).toEqual(expectedDisplayedColumns)
   });
   it('should set displayedColumns as undefined when data.columns is undefined', () => {
-    component.data.columns=[]
-
+    // component.data = { columns: undefined };
     component.ngOnChanges();
 
     expect(component.displayedColumns).toBeUndefined();
