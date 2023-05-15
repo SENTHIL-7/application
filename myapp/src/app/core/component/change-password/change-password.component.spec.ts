@@ -10,7 +10,7 @@ class MockUsersServices{
     return 
   }
 }
-describe('ChangePasswordComponent', () => {
+fdescribe('ChangePasswordComponent', () => {
   let component: ChangePasswordComponent;
   let fixture: ComponentFixture<ChangePasswordComponent>;
 

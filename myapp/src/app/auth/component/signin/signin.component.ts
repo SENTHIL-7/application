@@ -22,19 +22,18 @@ export class SigninComponent implements OnInit {
     private http: HttpRoutingService,
     private snackbar: SnackbarService) { }
   ngOnInit() {
-    this.authService.message.subscribe(res => this.message = res);
+    // this.authService.message.subscribe(res => this.message = res);
     this.loginForm = new FormGroup({
       email: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required)
     })
   }
-  signIn() {
+  onSignIn() {
     if (this.loginForm.valid) {
       this.authService.signIn(this.loginForm.value).subscribe(
         {
           next: (response) => {
             if (response && response['user']) {
-              console.log('response', response);
               this.router.navigate(['/app/employees'])
             }
           },

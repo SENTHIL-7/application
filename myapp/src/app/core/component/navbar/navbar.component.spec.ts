@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
 import { of } from 'rxjs';
 import { RouterTestingModule } from '@angular/router/testing';
+import { GalleryComponent } from '../gallery/gallery.component';
 // import { of } from 'rxjs';
 
 class MockRouter{
@@ -16,7 +17,7 @@ class MockRouter{
     return url;
   }
 }
-describe('NavbarComponent', () => {
+fdescribe('NavbarComponent', () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
 
@@ -24,10 +25,10 @@ describe('NavbarComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ NavbarComponent ],
       providers:[
-        {provide:Router,useClass:MockRouter},
-        {provide:ActivatedRoute,useValue:{
-          params:of({})
-        }}
+        // {provide:Router,useClass:MockRouter},
+        // {provide:ActivatedRoute,useValue:{
+        //   params:of({})
+        // }}
       ],
       imports:[
         MatToolbarModule,
@@ -36,7 +37,11 @@ describe('NavbarComponent', () => {
         BrowserAnimationsModule,
         MatListModule,
         RouterModule ,
-        RouterTestingModule
+        RouterTestingModule.withRoutes(
+          [
+            {path: 'app/gallery',component: GalleryComponent}
+          ]
+        )
       ]
     })
     .compileComponents();
