@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PipeFilterComponent } from './pipe-filter.component';
+import { FilterPipe } from '../../pipe/filter.pipe';
+import { LazyModule } from 'src/app/lazy/lazy.module';
 
 fdescribe('PipeFilterComponent', () => {
   let component: PipeFilterComponent;
@@ -8,7 +10,11 @@ fdescribe('PipeFilterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PipeFilterComponent ]
+      declarations: [ PipeFilterComponent ],
+      imports:[
+        // FilterPipe,
+        LazyModule
+      ]
     })
     .compileComponents();
 
@@ -20,8 +26,10 @@ fdescribe('PipeFilterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should filter pipe', () => {
+  it('should call addUser', () => {
+    component.addUser()
     component.userName='senthil'
-    expect(component).toBeTruthy();
+    component.addUser()
+    expect(component.addUser).toBeDefined();
   });
 });
