@@ -54,7 +54,6 @@ fdescribe('SigninComponent', () => {
       openSnackbar: jasmine.createSpy('openSnackbar')
     };
 
-    // component1 = new SigninComponent(router, snackbar);
     await TestBed.configureTestingModule({
       declarations: [ SigninComponent ],
       providers:[
