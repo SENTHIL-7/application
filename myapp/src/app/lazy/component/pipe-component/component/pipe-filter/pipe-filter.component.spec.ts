@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PipeFilterComponent } from './pipe-filter.component';
 
-describe('PipeFilterComponent', () => {
+fdescribe('PipeFilterComponent', () => {
   let component: PipeFilterComponent;
   let fixture: ComponentFixture<PipeFilterComponent>;
 
@@ -18,6 +18,10 @@ describe('PipeFilterComponent', () => {
   });
 
   it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+  it('should filter pipe', () => {
+    component.userName='senthil'
     expect(component).toBeTruthy();
   });
 });
