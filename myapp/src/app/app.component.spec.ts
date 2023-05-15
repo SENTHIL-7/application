@@ -1,7 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-
+import { AuthService } from './auth/service/auth.service';
+class MockAuth{
+  getMessage(){
+    return 
+  }
+}
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -11,6 +16,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers:[
+        {provide:AuthService,useClass:MockAuth},]
     }).compileComponents();
   });
 
@@ -20,11 +27,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  // it(`should have as title 'myapp'`, () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.componentInstance;
-  //   expect(app.title).toEqual('myapp');
-  // });
+
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);

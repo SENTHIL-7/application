@@ -54,8 +54,7 @@ fdescribe('DynTableComponent', () => {
   it('should call  applyFilter()', () => {
     let filterValue = "action"
     component.dataSource = new MatTableDataSource<any>();
-    component. applyFilter(<any>{target:<any>{value:'active'}});
+    component.applyFilter(<any>{target:<any>{value:'active'}});
     component.dataSource.filter=filterValue
-    // expect(component.dataSource.filter).toBe(filterValue.trim().toLowerCase());
   });
 });

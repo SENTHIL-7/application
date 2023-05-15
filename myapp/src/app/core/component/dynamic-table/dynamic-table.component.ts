@@ -11,9 +11,6 @@ import { MatSort } from '@angular/material/sort';
 })
 export class DynamicTableComponent implements OnInit, OnChanges, AfterViewInit {
   dataSource!: MatTableDataSource<PlacementData>;
-  // @Input() set data(value: PlacementData[]) {
-  //   this.dataSource = new MatTableDataSource<PlacementData>(value)
-  // };
   @Input() data!: any;
   @Input() columns!: TableColumn[];
   @Input() actionArr!: any[];
@@ -35,8 +32,6 @@ export class DynamicTableComponent implements OnInit, OnChanges, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
   }
   applyFilter(event: any) {
     const filterValue = (event.target as HTMLInputElement).value;

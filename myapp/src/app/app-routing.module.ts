@@ -20,7 +20,6 @@ import { PlacementsComponent } from './core/component/placement/component/placem
 import { PlacementTableComponent } from './core/component/placement/component/placement-table/placement-table.component';
 import { PlacementFormComponent } from './core/component/placement/component/placement-form/placement-form.component';
 import { EmployeeComponent } from './core/component/employee/employee.component';
-import { LoginComponent } from './auth/component/login/login.component';
 import { EmployeesComponent } from './core/component/employees/employees/employees.component';
 import { EmployeeTableComponent } from './core/component/employees/employee-table/employee-table.component';
 const routes: Routes = [
