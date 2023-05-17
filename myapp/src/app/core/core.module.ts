@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './component/navbar/navbar.component';
-import { HomeComponent } from './component/home/home.component';
 import { AboutComponent } from './component/about/about.component';
 import { MaterialModule } from '../material/material.module';
 import { PageTipComponent } from './component/page-tip/page-tip.component';
@@ -18,7 +17,6 @@ import { DynTableComponent } from './component/dyn-table/dyn-table.component';
 @NgModule({
   declarations: [
     NavbarComponent,
-    HomeComponent,
     AboutComponent,
     PageTipComponent,
     EmployeeRegistrationComponent,

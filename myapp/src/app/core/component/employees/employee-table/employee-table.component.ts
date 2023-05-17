@@ -3,9 +3,27 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/service/auth.service';
 import { PlacementAction } from 'src/app/core/model/placement-action.model';
 import { TableColumn } from 'src/app/core/model/table-column.model';
+import { BehaviorSubjectService } from 'src/app/core/service/behavior Subject/behavior-subject.service';
 import { DialogService } from 'src/app/shared/service/dialog.service';
 import { EmployeeService } from 'src/app/shared/service/employee.service';
 import { PlacementData } from 'src/app/shared/service/placement.service';
+export interface Columns {
+  columnDef: string,
+  header: string,
+  type: string,
+  sort: boolean
+}
+export interface Data {
+  datas: any,
+  columns: Columns[],
+  actions: PlacementAction[]
+}
+export interface ActionMethod {
+  id: number,
+  method: string,
+
+}
+
 
 @Component({
   selector: 'app-employee-table',
@@ -14,48 +32,52 @@ import { PlacementData } from 'src/app/shared/service/placement.service';
 })
 
 export class EmployeeTableComponent {
-  paramData!: string;
-  columns!: TableColumn[];
-  actionArr!: PlacementAction[];
-  isAction: boolean = true;
-  datas: PlacementData[] = [];
-  dateColumn!: any[];
-  idColumn!: any;
-  displayColumn!: any;
-  message!: any;
 
-  constructor(
-    private dialogservice: DialogService, private authService: AuthService,
+  constructor(private behaviorsubject: BehaviorSubjectService,
     private employeeService: EmployeeService,
-    private router: Router) {
-  }
+    private router: Router,
+    private dialogservice: DialogService,
+    private authService: AuthService) { }
+  color = 'blue';
+  data !: Data;
+  columns!: Columns[];
+  actionArr!: PlacementAction[];
+  message!: any;
   ngOnInit() {
+    this.authService.message.subscribe(res => this.message = res);
     this.columns = [
-      { name: 'id', displayName: 'Id' },
-      { name: 'firstName', displayName: 'Name' },
-      { name: 'email', displayName: 'Email' },
-      { name: 'action', displayName: 'Action' }
-    ]
-    this.displayColumn = ['id', 'firstName', 'roleId', 'designationId', 'dateOfJoin', 'email', 'action']
+      { columnDef: 'id', header: 'ID', type: 'Text', sort: true },
+      { columnDef: 'firstName', header: 'First Name', type: 'Text', sort: true },
+      { columnDef: 'email', header: 'Email', type: 'Text', sort: true },
+      { columnDef: 'dateOfBirth', header: 'Date Of Birth', type: 'Date', sort: true },
+      { columnDef: 'action', header: 'Action', type: 'mat-icon', sort: false }
+    ];
     this.actionArr = [
       { name: 'edit', toolTip: 'Edit', method: 'onEdit' },
       { name: 'delete', toolTip: 'delete', method: 'onDelete' },
       { name: 'description', toolTip: 'view', method: 'onView' }
     ];
-    this.dateColumn = [
-      { name: 'dateOfJoin', displayName: 'Date of Join', dateFormat: 'mediumDate' },
-    ]
-    this.idColumn = [
-      { name: 'roleId', displayName: 'Role', associateTable: 'role' },
-      { name: 'designationId', displayName: 'Designation', associateTable: 'designation' }
-    ]
-    this.authService.message.subscribe(res => this.message = res);
-    this.getEmployee();
+
+    this.employeeService.getEmployees().subscribe((res: any) => {
+      this.data = {
+        datas: res.response,
+        columns: this.columns,
+        actions: this.actionArr
+      }
+    })
   }
   getEmployee() {
     this.employeeService.getEmployees().subscribe((res: any) => {
-      this.datas = res.response;
+      this.data = {
+        datas: res.response,
+        columns: this.columns,
+        actions: this.actionArr
+      }
     })
+  }
+  onEdit(element: any) {
+    this.router.navigate(['/app/employees/employee-registration', 'edit', element.id])
+
   }
   onDelete(element: any) {
     const dialogRef = this.dialogservice.openConfirmationDialog(this.message.DELETE);
@@ -63,14 +85,11 @@ export class EmployeeTableComponent {
       if (response) {
         this.employeeService.deleteEmployee({ id: element.id }).subscribe((res: any) => {
           if (res) {
-            const delIndex = this.datas.findIndex(item => item.id === element.id);
-            console.log("datas", this.datas);
+            // const delIndex = this.data.datas.findIndex((item: any) => item.id === element.id);
 
-            console.log('id', delIndex);
-
-            if (delIndex !== -1) {
-              this.datas.splice(delIndex, 1);
-            }
+            // if (delIndex !== -1) {
+            //   this.data.datas.splice(delIndex, 1);
+            // }
             this.getEmployee();
           }
         })
@@ -79,9 +98,6 @@ export class EmployeeTableComponent {
   }
   onView(element: any) {
     this.router.navigate(['/app/employees/employee-registration', 'view', element.id])
-  }
-  onEdit(element: any) {
-    this.router.navigate(['/app/employees/employee-registration', 'edit', element.id])
   }
   tableAction(event: any) {
     switch (event.method) {
@@ -92,4 +108,6 @@ export class EmployeeTableComponent {
     }
 
   }
+
+
 }

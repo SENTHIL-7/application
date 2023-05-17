@@ -3,7 +3,6 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './core/component/about/about.component';
 import { ChangePasswordComponent } from './core/component/change-password/change-password.component';
 import { EmployeeRegistrationComponent } from './core/component/employee-registration/employee-registration.component';
-import { HomeComponent } from './core/component/home/home.component';
 import { NavbarComponent } from './core/component/navbar/navbar.component';
 import { NotFoundComponent } from './core/component/not-found/not-found.component';
 import { CustomPreloadingStrategyService } from './shared/service/custom-preloading-strategy.service';
@@ -19,7 +18,6 @@ const routes: Routes = [
   { path: 'signin', canActivate: [LoginGuard], component: SigninComponent },
   {
     path: 'app', component: NavbarComponent, canActivate: [AuthGuard], canActivateChild: [AccessGuard], children: [
-      { path: 'home', component: HomeComponent },
       { path: 'snackbar', component: AboutComponent },
       {
         path: 'employees', component: EmployeesComponent, children: [

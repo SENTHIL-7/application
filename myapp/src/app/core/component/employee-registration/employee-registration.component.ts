@@ -143,7 +143,7 @@ export class EmployeeRegistrationComponent implements OnInit, FormCanDeactivate 
               snackType: SnackType.Success,
               message: this.message.DATA_UPDATE
             })
-            this.router.navigate(['/app/employee'])
+            this.router.navigate(['/app/employees'])
           }
         })
 

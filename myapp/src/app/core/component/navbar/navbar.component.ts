@@ -14,6 +14,6 @@ export class NavbarComponent {
 
   }
   showGal(){
-    this.router.navigate(['/app/gallery'])
+    this.router.navigate(['/app/snackbar'])
   }
 }

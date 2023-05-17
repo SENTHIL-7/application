@@ -9,7 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
 import { of } from 'rxjs';
 import { RouterTestingModule } from '@angular/router/testing';
-import { GalleryComponent } from '../gallery/gallery.component';
+import { SnackbarComponent } from 'src/app/shared/component/snackbar/snackbar.component';
+import { AboutComponent } from '../about/about.component';
 // import { of } from 'rxjs';
 
 class MockRouter{
@@ -39,7 +40,7 @@ fdescribe('NavbarComponent', () => {
         RouterModule ,
         RouterTestingModule.withRoutes(
           [
-            {path: 'app/gallery',component: GalleryComponent}
+            {path: 'app/snackbar',component: AboutComponent}
           ]
         )
       ]
