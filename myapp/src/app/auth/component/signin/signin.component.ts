@@ -22,7 +22,7 @@ export class SigninComponent implements OnInit {
     private http: HttpRoutingService,
     private snackbar: SnackbarService) { }
   ngOnInit() {
-    // this.authService.message.subscribe(res => this.message = res);
+    this.authService.message.subscribe(res => this.message = res);
     this.loginForm = new FormGroup({
       email: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required)
@@ -31,6 +31,11 @@ export class SigninComponent implements OnInit {
   onSignIn() {
     if (this.loginForm.valid) {
       this.authService.signIn(this.loginForm.value).subscribe(
+        // (response:any)=>{
+        //   if (response && response['user']) {
+        //           this.router.navigate(['/app/employees'])
+        //         }
+        // }
         {
           next: (response) => {
             if (response && response['user']) {
@@ -38,14 +43,15 @@ export class SigninComponent implements OnInit {
             }
           },
           error: (err) => {
-            if (err && err.error) {
-              this.errorMessage = err.error.error;
-              this.error = true;
-              this.snackbar.openSnackbar({
-                message: this.errorMessage,
-                snackType: SnackType.Error
-              });
-            }
+            
+            // if (err && err.error) {
+              // this.errorMessage = err.error.error;
+              // this.error = true;
+              // this.snackbar.openSnackbar({
+              //   message: this.errorMessage,
+              //   snackType: SnackType.Error
+              // });
+            // }
           }
         }
       )

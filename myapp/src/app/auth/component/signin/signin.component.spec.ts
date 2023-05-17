@@ -4,27 +4,26 @@ import { SigninComponent } from './signin.component';
 import { AuthService } from '../../service/auth.service';
 import { HttpRoutingService } from 'src/app/shared/service/http-routing.service';
 import { SnackbarService } from 'src/app/shared/service/snackbar.service';
-import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterTestingModule } from '@angular/router/testing';
 import { MatIconModule } from '@angular/material/icon';
-import { EmployeesComponent } from 'src/app/core/component/employees/employees/employees.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { of, throwError } from 'rxjs';
+import { BehaviorSubject, of, throwError } from 'rxjs';
 import { MatInputModule } from '@angular/material/input';
+import { Router } from '@angular/router';
 let uservalue =false;
 let userSnackBar=false;
 class MockAuth{
   signIn(){
     if(uservalue){
      return of({
-
+user:{}
      })
     }
     else{
-return throwError({error:{error:'test'}})
+return throwError({error:{error:'error'}})
     }
   }
+  message =new BehaviorSubject<any>({})
 }
 class MockHttp{
 
@@ -32,7 +31,7 @@ class MockHttp{
 class MockSnackbar{
   openSnackbar(){
     if(userSnackBar){
-      return
+      return 
     }
     else{
       return 
@@ -40,19 +39,18 @@ class MockSnackbar{
   }
  
 }
+class MockRouter{
+  navigate(url:string){
+    return url ;
+  }
+}
+class MockBehavior{
+  message = new BehaviorSubject<any>({})
+}
 fdescribe('SigninComponent', () => {
   let component: SigninComponent;
   let fixture: ComponentFixture<SigninComponent>;
-  let component1;
-  let router:any;
-  let snackbar;
   beforeEach(async () => {
-    router = {
-      navigate: jasmine.createSpy('navigate')
-    };
-    snackbar = {
-      openSnackbar: jasmine.createSpy('openSnackbar')
-    };
 
     await TestBed.configureTestingModule({
       declarations: [ SigninComponent ],
@@ -60,17 +58,19 @@ fdescribe('SigninComponent', () => {
         {provide:AuthService,useClass:MockAuth},
         {provide:HttpRoutingService,useClass:MockHttp},
         {provide:SnackbarService,useClass:MockSnackbar},
+        {provide:Router,useClass:MockRouter},
+        // {provide:BehaviorSubject,useClass:MockBehavior}
       ],
       imports:[
         BrowserAnimationsModule,
         MatIconModule,
         MatInputModule,
         ReactiveFormsModule,
-        RouterTestingModule.withRoutes(
-          [
-            {path: 'app/employees',component: EmployeesComponent}
-          ]
-        )
+        // RouterTestingModule.withRoutes(
+        //   [
+        //     {path: 'app/employees',component: EmployeesComponent}
+        //   ]
+        // )
       ]
       
     })
@@ -97,16 +97,11 @@ fdescribe('SigninComponent', () => {
       password:'1234'
     })
     component.onSignIn();
-    const response = { user: { /* user data */ } };
-  router.navigate(['/app/employees'])
-    // component.next(response);
-    // expect(router.navigate).toHaveBeenCalledWith(['/app/employees']);
     expect(component.onSignIn).toBeDefined();
   });
-  it('should call signIn', () => {
+  it('should call signIn in invalid form', () => {
     uservalue=false;
     component.onSignIn();
-    userSnackBar=true;
     expect(component.onSignIn).toBeDefined();
   });
 });
