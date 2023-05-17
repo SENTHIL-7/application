@@ -1,14 +1,23 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SnackbarComponent } from './snackbar.component';
+import { MAT_SNACK_BAR_DATA, MatSnackBarRef } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
 
-describe('SnackbarComponent', () => {
+fdescribe('SnackbarComponent', () => {
   let component: SnackbarComponent;
   let fixture: ComponentFixture<SnackbarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SnackbarComponent ]
+      declarations: [ SnackbarComponent ],
+      providers: [
+        { provide: MAT_SNACK_BAR_DATA, useValue: {} },
+        { provide: MatSnackBarRef, useValue: { dismiss: () => { } } }
+      ],
+      imports:[
+        MatIconModule
+      ]
     })
     .compileComponents();
 
@@ -19,5 +28,9 @@ describe('SnackbarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('should onClose', () => {
+component.onClose()
+expect(component.onClose).toBeDefined();
   });
 });

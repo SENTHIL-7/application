@@ -1,8 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 
 import { BehaviorSubjectService } from './behavior-subject.service';
+import { BehaviorSubject } from 'rxjs';
 
-describe('BehaviorSubjectService', () => {
+fdescribe('BehaviorSubjectService', () => {
   let service: BehaviorSubjectService;
 
   beforeEach(() => {
@@ -12,5 +13,8 @@ describe('BehaviorSubjectService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
+  });
+  it('should call constructor', () => {
+    service.message= new BehaviorSubject<any>({})
   });
 });

@@ -24,7 +24,7 @@ export class SnackbarService {
         icon: property?.icon,
         message: input.message
       },
-      panelClass: input.panelClass ? input.panelClass : property?.panelClass ? property.panelClass : '',
+      panelClass: input.panelClass ? input.panelClass : property?.panelClass,
       duration: input.duration || 10000
     });
   }

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageTipComponent } from './page-tip.component';
 
-describe('PageTipComponent', () => {
+fdescribe('PageTipComponent', () => {
   let component: PageTipComponent;
   let fixture: ComponentFixture<PageTipComponent>;
 

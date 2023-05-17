@@ -44,9 +44,6 @@ class MockRouter{
     return url ;
   }
 }
-class MockBehavior{
-  message = new BehaviorSubject<any>({})
-}
 fdescribe('SigninComponent', () => {
   let component: SigninComponent;
   let fixture: ComponentFixture<SigninComponent>;
@@ -59,7 +56,6 @@ fdescribe('SigninComponent', () => {
         {provide:HttpRoutingService,useClass:MockHttp},
         {provide:SnackbarService,useClass:MockSnackbar},
         {provide:Router,useClass:MockRouter},
-        // {provide:BehaviorSubject,useClass:MockBehavior}
       ],
       imports:[
         BrowserAnimationsModule,

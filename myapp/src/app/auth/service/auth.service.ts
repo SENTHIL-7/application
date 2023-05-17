@@ -40,7 +40,7 @@ export class AuthService {
   getRefreshToken() {
     const currentUser = JSON.parse(sessionStorage.getItem('currentUserToken') || '');
     const refreshToken = currentUser ? currentUser.refreshToken : null;
-    return this.httpRoutingService.postMethod('refreshToken', { refreshToken })
+    return this.httpRoutingService.postMethod('refreshToken', { refreshToken });
   }
   isAuthenticated(): boolean {
     let token;

@@ -33,7 +33,7 @@ export interface ActionMethod {
 
 export class EmployeeTableComponent {
 
-  constructor(private behaviorsubject: BehaviorSubjectService,
+  constructor(
     private employeeService: EmployeeService,
     private router: Router,
     private dialogservice: DialogService,

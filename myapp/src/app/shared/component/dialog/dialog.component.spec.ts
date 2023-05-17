@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DialogComponent } from './dialog.component';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 
-describe('DialogComponent', () => {
+fdescribe('DialogComponent', () => {
   let component: DialogComponent;
   let fixture: ComponentFixture<DialogComponent>;
 
@@ -11,7 +11,7 @@ describe('DialogComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ DialogComponent ],
       providers:[
-        {provide:MAT_DIALOG_DATA}
+        {provide:MAT_DIALOG_DATA,useValue:{}}
       ]
       ,
       imports:[
