@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { CustomValidatorService } from './custom-validator.service';
 import { FormControl, FormGroup } from '@angular/forms';
 
-fdescribe('CustomValidatorService', () => {
+describe('CustomValidatorService', () => {
   let service: CustomValidatorService;
 
   beforeEach(() => {
@@ -18,7 +18,6 @@ fdescribe('CustomValidatorService', () => {
     let form =new FormGroup({
       confirmPassword:new FormControl('1234'),
       newPassword:new FormControl('1234'),
-
     })
     service.validateAreEqual(form);
     expect(service.validateAreEqual).toBeDefined();

@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SortComponent } from './sort.component';
 import { LazyModule } from 'src/app/lazy/lazy.module';
 
-fdescribe('SortComponent', () => {
+describe('SortComponent', () => {
   let component: SortComponent;
   let fixture: ComponentFixture<SortComponent>;
 
@@ -21,7 +21,7 @@ fdescribe('SortComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should ', () => {
     expect(component).toBeTruthy();
   });
   it('should call oninit', () => {

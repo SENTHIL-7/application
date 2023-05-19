@@ -13,14 +13,15 @@ export class AccessGuard implements CanActivateChild {
     { id: 4, routeName: '/app/lazy/pipe' },
   ]
   canActivateChild(
-    childRoute: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const index = this.routeArray.findIndex(x => x.routeName == state.url);
-    if (index != -1) {
-      return true
-    }
-    else {
-      return true
-    }
+    childRoute?: ActivatedRouteSnapshot,
+    state?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    // const index = this.routeArray.findIndex(x => x.routeName == state.url);
+    // if (index != -1) {
+    //   return true
+    // }
+    // else {
+    //   return false
+    // }
+    return true;
   }
 }

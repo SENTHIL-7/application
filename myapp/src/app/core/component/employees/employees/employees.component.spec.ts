@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EmployeesComponent } from './employees.component';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('EmployeesComponent', () => {
   let component: EmployeesComponent;
@@ -8,7 +10,11 @@ describe('EmployeesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmployeesComponent ]
+      declarations: [ EmployeesComponent ],
+      imports:[
+        MatIconModule,
+        RouterTestingModule
+      ]
     })
     .compileComponents();
 

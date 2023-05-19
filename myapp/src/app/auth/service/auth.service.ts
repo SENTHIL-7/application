@@ -57,7 +57,7 @@ export class AuthService {
     return false
   }
   logout() {
-    sessionStorage.removeItem('currentUserToken')
+    sessionStorage.removeItem('currentUserToken');
     return true;
   }
 }

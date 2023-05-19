@@ -4,7 +4,7 @@ import { PipeFilterComponent } from './pipe-filter.component';
 import { FilterPipe } from '../../pipe/filter.pipe';
 import { LazyModule } from 'src/app/lazy/lazy.module';
 
-fdescribe('PipeFilterComponent', () => {
+describe('PipeFilterComponent', () => {
   let component: PipeFilterComponent;
   let fixture: ComponentFixture<PipeFilterComponent>;
 

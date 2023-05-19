@@ -16,10 +16,10 @@ export class CanDeactivateGuard implements CanDeactivate<unknown> {
   message!: any;
   canDeactivate(
     component: FormCanDeactivate,
-    currentRoute: ActivatedRouteSnapshot,
-    currentState: RouterStateSnapshot,
+    currentRoute?: ActivatedRouteSnapshot,
+    currentState?: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (!component.canDeactivate()) {
+    if (component&&!component.canDeactivate()) {
       return new Observable((observer: Observer<boolean>) => {
         let diologRef = this.dialogService.openConfirmationDialog(this.message.DATA_UNSAVED);
         diologRef.afterClosed().pipe(filter((result: boolean) => {

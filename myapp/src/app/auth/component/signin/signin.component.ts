@@ -31,11 +31,6 @@ export class SigninComponent implements OnInit {
   onSignIn() {
     if (this.loginForm.valid) {
       this.authService.signIn(this.loginForm.value).subscribe(
-        // (response:any)=>{
-        //   if (response && response['user']) {
-        //           this.router.navigate(['/app/employees'])
-        //         }
-        // }
         {
           next: (response) => {
             if (response && response['user']) {
@@ -44,14 +39,14 @@ export class SigninComponent implements OnInit {
           },
           error: (err) => {
             
-            // if (err && err.error) {
-              // this.errorMessage = err.error.error;
-              // this.error = true;
-              // this.snackbar.openSnackbar({
-              //   message: this.errorMessage,
-              //   snackType: SnackType.Error
-              // });
-            // }
+            if (err && err.error) {
+              this.errorMessage = err.error.error;
+              this.error = true;
+              this.snackbar.openSnackbar({
+                message: this.errorMessage,
+                snackType: SnackType.Error
+              });
+            }
           }
         }
       )

@@ -11,7 +11,7 @@ class MockHttpRoutingService{
     return of({})
   }
 }
-fdescribe('PlacementService', () => {
+describe('PlacementService', () => {
   let service: PlacementService;
 
   beforeEach(() => {

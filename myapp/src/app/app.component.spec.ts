@@ -12,7 +12,7 @@ class MockAuth{
     return 
   }
 }
-fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [

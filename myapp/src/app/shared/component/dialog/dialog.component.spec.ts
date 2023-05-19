@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DialogComponent } from './dialog.component';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 
-fdescribe('DialogComponent', () => {
+describe('DialogComponent', () => {
   let component: DialogComponent;
   let fixture: ComponentFixture<DialogComponent>;
 

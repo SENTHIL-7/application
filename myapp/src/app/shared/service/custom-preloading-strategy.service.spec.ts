@@ -8,7 +8,7 @@ import { Observable, of } from 'rxjs';
 //     subscriber.next(1)
 //   })
 // }
-fdescribe('CustomPreloadingStrategyService', () => {
+describe('CustomPreloadingStrategyService', () => {
   let service: CustomPreloadingStrategyService;
 let router:Route;
 

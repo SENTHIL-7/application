@@ -13,4 +13,9 @@ describe('AccessGuard', () => {
   it('should be created', () => {
     expect(guard).toBeTruthy();
   });
+  it('should canActivateChild', () => {
+    guard.canActivateChild()
+    expect(guard.canActivateChild).toBeDefined();
+    // expect(guard).toBeTruthy();
+  });
 });

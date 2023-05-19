@@ -7,7 +7,7 @@ class MockSnackbar{
     return 
   }
 }
-fdescribe('AboutComponent', () => {
+describe('AboutComponent', () => {
   let component: AboutComponent;
   let fixture: ComponentFixture<AboutComponent>;
 

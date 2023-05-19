@@ -1,6 +1,6 @@
 import { HighlightPipe } from './highlight.pipe';
 
-fdescribe('HighlightPipe', () => {
+describe('HighlightPipe', () => {
   it('create an instance', () => {
     const pipe = new HighlightPipe();
     expect(pipe).toBeTruthy();

@@ -19,6 +19,8 @@ import { MatIconModule } from '@angular/material/icon';
 let isView=false;
 let global = false;
 let isUpdate=false;
+let isParam:boolean;
+
 class MockAuth{
   message =new BehaviorSubject<any>({})
 }
@@ -30,7 +32,24 @@ class MockEmployeeService{
     return of({})
   }
   getEmployee(){
-       return of({})
+    if(isParam){
+       return of({
+        employeeDetails:{
+        alternateEmail: "senthilkumarp@centizen.com",
+        created: "2023-04-21T06:37:38.000Z",
+        dateOfBirth: "2001-09-08T18:30:00.000Z",
+        dateOfJoin: "2023-01-31T18:30:00.000Z",
+        designationId: 2,
+        email: "apsenthilkumar2001@gmail.com",
+        firstName: "senthilkumar",
+        id: 1,
+        lastName: "p",
+        password: "$2b$05$DvBwZd4Mb7KWj4DMXuOiyeBcB5tYQwHjA1ykHNMw4XScUW2tSRDO2",
+        roleId: 3
+       }})}
+       else{
+        return of({})
+       }
   }
   createEmployee(){
     if(global){
@@ -71,7 +90,7 @@ class MockRouter{
     return url ;
   }
 }
-fdescribe('EmployeeRegistrationComponent', () => {
+describe('EmployeeRegistrationComponent', () => {
   let component: EmployeeRegistrationComponent;
   let fixture: ComponentFixture<EmployeeRegistrationComponent>;
 
@@ -196,35 +215,8 @@ fdescribe('EmployeeRegistrationComponent', () => {
     component.canDeactivate();
     expect(component.canDeactivate).toBeDefined();
  });
-  // it('should route is false', () => {
-  //   isRoute=false;
-  //   component.employeeRegistrationForm = new FormGroup({
-  //     firstName: new FormControl('senthil'),
-  //     lastName: new FormControl('p'),
-  //     email: new FormControl('senthil@gmail.com'),
-  //     alternateEmail: new FormControl('senthil@gmail.com'),
-  //     dateOfJoin: new FormControl('2023-01-01 04:00:00'),
-  //     dateOfBirth: new FormControl('2002-09-09 04:00:00'),
-  //     designationId: new FormControl(1),
-  //     roleId: new FormControl(1),
-  //     password:new FormControl(null),
-  //     contacts:new FormArray([])
-  //   })
-  // });
-  // it('should route is true', () => {
-  //   isRoute=true;
-  //   component.employeeRegistrationForm = new FormGroup({
-  //     firstName: new FormControl('senthil'),
-  //     lastName: new FormControl('p'),
-  //     email: new FormControl('senthil@gmail.com'),
-  //     alternateEmail: new FormControl('senthil@gmail.com'),
-  //     dateOfJoin: new FormControl('2023-01-01 04:00:00'),
-  //     dateOfBirth: new FormControl('2002-09-09 04:00:00'),
-  //     designationId: new FormControl(1),
-  //     roleId: new FormControl(1),
-  //     password:new FormControl(null),
-  //     contacts:new FormArray([])
-  //   })
-   
-  // });
+  it('should call  formInitial()', () => {
+    isParam=true;
+    component.ngOnInit()
+ });
 });

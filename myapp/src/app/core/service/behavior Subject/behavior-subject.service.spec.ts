@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { BehaviorSubjectService } from './behavior-subject.service';
 import { BehaviorSubject } from 'rxjs';
 
-fdescribe('BehaviorSubjectService', () => {
+describe('BehaviorSubjectService', () => {
   let service: BehaviorSubjectService;
 
   beforeEach(() => {

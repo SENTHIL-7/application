@@ -5,7 +5,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-fdescribe('DynTableComponent', () => {
+describe('DynTableComponent', () => {
   let component: DynTableComponent;
   let fixture: ComponentFixture<DynTableComponent>;
 

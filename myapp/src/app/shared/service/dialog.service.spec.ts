@@ -4,7 +4,7 @@ import { DialogService } from './dialog.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../component/dialog/dialog.component';
 class MockMatDialog{}
-fdescribe('DialogService', () => {
+describe('DialogService', () => {
   let service: DialogService;
 
   beforeEach(() => {

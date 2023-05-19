@@ -4,7 +4,7 @@ import { SnackbarComponent } from './snackbar.component';
 import { MAT_SNACK_BAR_DATA, MatSnackBarRef } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 
-fdescribe('SnackbarComponent', () => {
+describe('SnackbarComponent', () => {
   let component: SnackbarComponent;
   let fixture: ComponentFixture<SnackbarComponent>;
 

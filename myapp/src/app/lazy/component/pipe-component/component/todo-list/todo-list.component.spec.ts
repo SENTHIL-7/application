@@ -4,7 +4,7 @@ import { TodoListComponent } from './todo-list.component';
 import { MatDivider, MatDividerModule } from '@angular/material/divider';
 import { LazyModule } from 'src/app/lazy/lazy.module';
 
-fdescribe('TodoListComponent', () => {
+describe('TodoListComponent', () => {
   let component: TodoListComponent;
   let fixture: ComponentFixture<TodoListComponent>;
 

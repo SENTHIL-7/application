@@ -1,6 +1,6 @@
 import { AppendPipe } from './append.pipe';
 
-fdescribe('AppendPipe', () => {
+describe('AppendPipe', () => {
   it('create an instance', () => {
     const pipe = new AppendPipe();
     expect(pipe).toBeTruthy();

@@ -4,7 +4,7 @@ import { SnackbarService } from './snackbar.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackType } from 'src/app/core/model/snack-bar.model';
 
-fdescribe('SnackbarService', () => {
+describe('SnackbarService', () => {
   let service: SnackbarService;
 
   beforeEach(() => {

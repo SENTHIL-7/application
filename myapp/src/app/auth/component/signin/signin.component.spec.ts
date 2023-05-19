@@ -10,7 +10,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { BehaviorSubject, of, throwError } from 'rxjs';
 import { MatInputModule } from '@angular/material/input';
 import { Router } from '@angular/router';
-let uservalue =false;
+let uservalue =true;
 let userSnackBar=false;
 class MockAuth{
   signIn(){
@@ -44,7 +44,7 @@ class MockRouter{
     return url ;
   }
 }
-fdescribe('SigninComponent', () => {
+describe('SigninComponent', () => {
   let component: SigninComponent;
   let fixture: ComponentFixture<SigninComponent>;
   beforeEach(async () => {
@@ -62,11 +62,6 @@ fdescribe('SigninComponent', () => {
         MatIconModule,
         MatInputModule,
         ReactiveFormsModule,
-        // RouterTestingModule.withRoutes(
-        //   [
-        //     {path: 'app/employees',component: EmployeesComponent}
-        //   ]
-        // )
       ]
       
     })
@@ -82,12 +77,15 @@ fdescribe('SigninComponent', () => {
   });
   it('should call signIn', () => {
     uservalue=true;
-    // component.loginForm=new FormGroup(
-    //   {
-    //     email: new FormControl('apsenthilkumar2001@gmail.com'),
-    //     password: new FormControl('1234')
-    //   }
-    // )
+    component.loginForm.setValue({
+      email:'apsenthilkumar2001@gmail.com',
+      password:'1234'
+    })
+    component.onSignIn();
+    expect(component.onSignIn).toBeDefined();
+  });
+  it('should call signIn', () => {
+    uservalue=false;
     component.loginForm.setValue({
       email:'apsenthilkumar2001@gmail.com',
       password:'1234'

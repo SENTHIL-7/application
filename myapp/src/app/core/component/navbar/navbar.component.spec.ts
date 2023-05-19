@@ -18,7 +18,7 @@ class MockRouter{
     return url;
   }
 }
-fdescribe('NavbarComponent', () => {
+describe('NavbarComponent', () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
 

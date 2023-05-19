@@ -12,11 +12,3 @@ export class MyBgColorDirective {
   }
 
 }
-
-  // @HostListener('mouseenter') onMouseEnter() {
-  //   this.highlight(this.appMyBgColor || 'red');
-  // }
-
-  // private highlight(color: string) {
-  //   this.el.nativeElement.style.backgroundColor = color
-  // }
