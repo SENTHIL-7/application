@@ -10,11 +10,11 @@
       </div>
       <div class="mynav" fxShow="true" fxHide.lt-md>
         <!-- <a mat-button class="fw-bold" routerLinkActive="nav-active" routerLink="/app/home">Home</a> -->
-        <a mat-button  routerLink="/app/snackbar">Snackbar</a>
-        <a mat-button  routerLink="/app/employees">employee</a>
-        <a mat-button  routerLink="/app/changepwd">changepwd</a>
-        <a mat-button  routerLink="/app/lazy/pipe">pipe</a>
-        <a mat-button  routerLink="/signin">logout</a>
+        <a mat-button data-control="snackbar"  routerLink="/app/snackbar">Snackbar</a>
+        <a mat-button data-control="employees" routerLink="/app/employees">employee</a>
+        <a mat-button data-control="changePwd"  routerLink="/app/changepwd">changepwd</a>
+        <a mat-button  data-control="pipe" routerLink="/app/lazy/pipe">pipe</a>
+        <a mat-button data-control="logout" routerLink="/signin">logout</a>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>

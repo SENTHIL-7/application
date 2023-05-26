@@ -1,11 +1,11 @@
 <div class="container" fxLayout="row" fxLayoutAlign="center center">
   <form class="formFeild" [formGroup]="loginForm">
     <div fxLayout="column" fxFlex="300px" fxLayoutGap="10px">
-      <h2>SignIn</h2>
+      <h2 class="main-heading">SignIn</h2>
       <mat-label>User Email</mat-label>
       <mat-form-field appearance="outline">
         <input matInput placeholder="Email" formControlName="email">
-        <mat-error *ngIf="loginForm?.get('email')?.hasError('required')">
+        <mat-error data-control="fieldRequiredError" *ngIf="loginForm?.get('email')?.hasError('required')">
           {{message?.FIELD_REQUIRED}}
         </mat-error>
       </mat-form-field>
@@ -13,13 +13,13 @@
       <mat-form-field appearance="outline">
         <input matInput placeholder="Password" formControlName="password" [type]="hide? 'password':'text'">
         <button matSuffix mat-icon-button
-          (click)="hide=!hide"><mat-icon>{{hide?'visibility_off':'visibility'}}</mat-icon></button>
-        <mat-error *ngIf="loginForm?.get('password')?.hasError('required')">
+          (click)="hide=!hide"><mat-icon data-control="showPassword">{{hide?'visibility_off':'visibility'}}</mat-icon></button>
+        <mat-error  data-control="fieldRequiredError" *ngIf="loginForm?.get('password')?.hasError('required')">
           {{message?.FIELD_REQUIRED}}
         </mat-error>
       </mat-form-field>
       <div fxLayout="row" fxLayoutAlign="center center">
-        <button mat-raised-button color="primary" (click)="onSignIn()">SignIn</button>
+        <button data-control="signInFunction" mat-raised-button color="primary" (click)="onSignIn()">SignIn</button>
       </div>
     </div>
   </form>

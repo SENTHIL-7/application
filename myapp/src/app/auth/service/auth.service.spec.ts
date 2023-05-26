@@ -67,7 +67,6 @@ describe('AuthService', () => {
   it('should call getToken', () => {
     sessionStorage.setItem('currentUserToken', JSON.stringify({ token: "sdcdscds", refreshToken:"dbmscdsjhj" }))
     service.getToken();
-    sessionStorage.removeItem('currentUserToken');   
     expect(service.getToken).toBeDefined();
   });
   it('should call getRefreshToken()', () => {

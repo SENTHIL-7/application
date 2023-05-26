@@ -11,10 +11,9 @@ import { CustomValidatorService } from 'src/app/shared/service/custom-validator.
 })
 
 export class ChangePasswordComponent implements OnInit {
-  // message!: Observable<any>;
+  message!: Observable<any>;
   passwordForm!: FormGroup;
-  // constructor(private customValidate: CustomValidatorService, private authService: AuthService) { }
-  constructor(private customValidate: CustomValidatorService) { }
+  constructor(private customValidate: CustomValidatorService, private authService: AuthService) { }
   ngOnInit() {
     this.passwordForm = new FormGroup({
       oldPassword: new FormControl(null, Validators.required),
@@ -22,7 +21,7 @@ export class ChangePasswordComponent implements OnInit {
       confirmPassword: new FormControl(null, Validators.required)
     }, this.customValidate.validateAreEqual.bind(this)
     );
-    // this.message = this.authService.message;
+    this.message = this.authService.message;
   }
 
   onSubmit() {

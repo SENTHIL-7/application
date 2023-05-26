@@ -8,10 +8,10 @@
           <mat-form-field fxFlex="60%" appearance="outline">
             <input matInput formControlName="firstName">
             <mat-error *ngIf="employeeRegistrationForm?.get('firstName')?.hasError('required')">
-              {{message.FIELD_REQUIRED}}
+              {{message?.FIELD_REQUIRED}}
             </mat-error>
             <mat-error *ngIf="employeeRegistrationForm?.get('firstName')?.hasError('pattern')">
-              {{message.INVALID_NAME}}
+              {{message?.INVALID_NAME}}
             </mat-error>
           </mat-form-field>
         </div>
@@ -19,9 +19,9 @@
           <mat-label fxFlex="40%">Last Name</mat-label>
           <mat-form-field fxFlex="60%" appearance="outline">
             <input matInput formControlName="lastName">
-            <mat-error *ngIf="employeeRegistrationForm?.get('lastName')?.hasError('requred')">{{message.FIELD_REQUIRED}}
+            <mat-error *ngIf="employeeRegistrationForm?.get('lastName')?.hasError('requred')">{{message?.FIELD_REQUIRED}}
             </mat-error>
-            <mat-error *ngIf="employeeRegistrationForm?.get('lastName')?.hasError('patern')">{{message.INVALID_NAME}}
+            <mat-error *ngIf="employeeRegistrationForm?.get('lastName')?.hasError('patern')">{{message?.INVALID_NAME}}
             </mat-error>
           </mat-form-field>
         </div>
@@ -33,13 +33,13 @@
           <mat-form-field fxFlex="60%" appearance="outline">
             <input matInput formControlName="email">
             <mat-error *ngIf="employeeRegistrationForm?.get('email')?.hasError('required')">
-              {{message.FIELD_REQUIRED}}
+              {{message?.FIELD_REQUIRED}}
             </mat-error>
             <mat-error *ngIf="employeeRegistrationForm?.get('email')?.hasError('email')">
-              {{message.INVALID_EMAIL}}
+              {{message?.INVALID_EMAIL}}
             </mat-error>
             <mat-error *ngIf="employeeRegistrationForm?.get('email')?.hasError('emailExist')">
-              {{message.EMAIL_EXISTS}}
+              {{message?.EMAIL_EXISTS}}
             </mat-error>
           </mat-form-field>
         </div>
@@ -48,7 +48,7 @@
           <mat-form-field fxFlex="60%" appearance="outline">
             <input matInput formControlName="alternateEmail">
             <mat-error *ngIf="employeeRegistrationForm?.get('alternateEmail')?.hasError('required')">
-              {{message.FIELD_REQUIRED}}
+              {{message?.FIELD_REQUIRED}}
             </mat-error>
           </mat-form-field>
         </div>
@@ -63,14 +63,14 @@
             <mat-datepicker #picker></mat-datepicker>
             <mat-error
               *ngIf="employeeRegistrationForm?.get('dateOfBirth')?.hasError('required')&&!employeeRegistrationForm?.get('dateOfBirth')?.hasError('matDatepickerParse')">
-              {{message.FIELD_REQUIRED}}
+              {{message?.FIELD_REQUIRED}}
             </mat-error>
             <mat-error
               *ngIf="employeeRegistrationForm?.get('dateOfBirth')?.hasError('matDatepickerParse')&&employeeRegistrationForm?.get('dateOfBirth')?.hasError('required')">
-              {{message.INVALID_FIELD}}
+              {{message?.INVALID_FIELD}}
             </mat-error>
             <mat-error *ngIf="employeeRegistrationForm?.get('dateOfBirth')?.hasError('matDatepickerMax')">
-              {{message.ERROR}}
+              {{message?.ERROR}}
             </mat-error>
           </mat-form-field>
         </div>
@@ -83,11 +83,11 @@
             <mat-datepicker #picker2></mat-datepicker>
             <mat-error
               *ngIf="employeeRegistrationForm?.get('dateOfJoin')?.hasError('required')&&!employeeRegistrationForm?.get('dateOfJoin')?.hasError('matDatepickerParse')">
-              {{message.FIELD_REQUIRED}}
+              {{message?.FIELD_REQUIRED}}
             </mat-error>
             <mat-error
               *ngIf="employeeRegistrationForm?.get('dateOfJoin')?.hasError('matDatepickerParse')&&employeeRegistrationForm?.get('dateOfJoin')?.hasError('required')">
-              {{message.INVALID_FIELD}}
+              {{message?.INVALID_FIELD}}
             </mat-error>
             <mat-error *ngIf="employeeRegistrationForm?.get('dateOfJoin')?.hasError('matDatepickerMin')">
               Error
@@ -101,10 +101,10 @@
           <mat-label fxFlex="40%">Designation</mat-label>
           <mat-form-field fxFlex="60%" appearance="outline">
             <mat-select formControlName="designationId">
-              <mat-option [value]="item?.id" *ngFor="let item of designation">{{item?.name}}</mat-option>
+              <mat-option class="designationIdOption" [value]="item?.id" *ngFor="let item of designation">{{item?.name}}</mat-option>
             </mat-select>
             <mat-error
-              *ngIf="employeeRegistrationForm?.get('designationId')?.hasError('required')">{{message.FIELD_REQUIRED}}
+              *ngIf="employeeRegistrationForm?.get('designationId')?.hasError('required')">{{message?.FIELD_REQUIRED}}
             </mat-error>
           </mat-form-field>
         </div>
@@ -112,9 +112,9 @@
           <mat-label fxFlex="40%">Role</mat-label>
           <mat-form-field fxFlex="60%" appearance="outline">
             <mat-select formControlName="roleId">
-              <mat-option [value]="item?.id" *ngFor="let item of role">{{item?.name}}</mat-option>
+              <mat-option class="roleIdOption" [value]="item?.id" *ngFor="let item of role">{{item?.name}}</mat-option>
             </mat-select>
-            <mat-error *ngIf="employeeRegistrationForm?.get('roleId')?.hasError('required')">{{message.FIELD_REQUIRED}}
+            <mat-error *ngIf="employeeRegistrationForm?.get('roleId')?.hasError('required')">{{message?.FIELD_REQUIRED}}
             </mat-error>
           </mat-form-field>
         </div>
@@ -151,10 +151,10 @@
                   <mat-form-field fxFlex="60%" appearance="outline">
                     <input matInput formControlName="address">
                     <mat-error *ngIf="getControls(employeeRegistrationForm,i)?.address?.hasError('required')">
-                      {{message.FIELD_REQUIRED}}
+                      {{message?.FIELD_REQUIRED}}
                     </mat-error>
                     <mat-error *ngIf="getControls(employeeRegistrationForm,i)?.address?.hasError('pattern')">
-                      {{message.INVALID_FIELD}}
+                      {{message?.INVALID_FIELD}}
                     </mat-error>
                   </mat-form-field>
                 </div>
@@ -163,10 +163,10 @@
                   <mat-form-field fxFlex="60%" appearance="outline">
                     <input matInput formControlName="city">
                     <mat-error *ngIf="getControls(employeeRegistrationForm,i)?.city?.hasError('required')">
-                      {{message.FIELD_REQUIRED}}
+                      {{message?.FIELD_REQUIRED}}
                     </mat-error>
                     <mat-error *ngIf="getControls(employeeRegistrationForm,i)?.city?.hasError('pattern')">
-                      {{message.INVALID_FIELD}}
+                      {{message?.INVALID_FIELD}}
                     </mat-error>
                   </mat-form-field>
                 </div>
@@ -178,10 +178,10 @@
                   <mat-form-field fxFlex="60%" appearance="outline">
                     <input matInput formControlName="state">
                     <mat-error *ngIf="getControls(employeeRegistrationForm,i)?.state?.hasError('required')">
-                      {{message.FIELD_REQUIRED}}
+                      {{message?.FIELD_REQUIRED}}
                     </mat-error>
                     <mat-error *ngIf="getControls(employeeRegistrationForm,i)?.state?.hasError('pattern')">
-                      {{message.INVALID_FIELD}}
+                      {{message?.INVALID_FIELD}}
                     </mat-error>
                   </mat-form-field>
                 </div>
@@ -190,10 +190,10 @@
                   <mat-form-field fxFlex="60%" appearance="outline">
                     <input matInput formControlName="pincode">
                     <mat-error *ngIf="getControls(employeeRegistrationForm,i)?.pincode?.hasError('required')">
-                      {{message.FIELD_REQUIRED}}
+                      {{message?.FIELD_REQUIRED}}
                     </mat-error>
                     <mat-error *ngIf="getControls(employeeRegistrationForm,i)?.pincode?.hasError('pattern')">
-                      {{message.INVALID_FIELD}}
+                      {{message?.INVALID_FIELD}}
                     </mat-error>
                   </mat-form-field>
                 </div>
@@ -204,7 +204,7 @@
       </div>
       <div fxLayout="row" fxLayoutAlign="center center">
         <button *ngIf="!update" mat-raised-button color="accent" (click)="onReset()">Reset</button>
-        <button mat-raised-button color="primary" (click)="onSubmit()">{{update?'Update':'Submit'}}</button>
+        <button mat-raised-button color="primary" data-control="employeeRFSubmit" (click)="onSubmit()">{{update?'Update':'Submit'}}</button>
       </div>
     </form>
     <!-- </div> -->

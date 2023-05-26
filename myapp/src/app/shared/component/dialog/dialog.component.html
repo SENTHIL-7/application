@@ -5,10 +5,9 @@
 <div mat-dialog-actions fxLayoutAlign="end end" fxLayoutGap="5px">
   <ng-container *ngIf="data?.actiontype === 'Confirmation'">
     <button mat-stroked-button color="primary" [mat-dialog-close]="false">No</button>
-    <button mat-raised-button color="primary" [mat-dialog-close]="true">Yes</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true" data-control="formLeftTrue">Yes</button>
   </ng-container>
   <ng-container *ngIf="data?.actiontype === 'message'">
     <button mat-stroked-button color="primary" [mat-dialog-close]="false">ok</button>
-   
   </ng-container>
 </div>

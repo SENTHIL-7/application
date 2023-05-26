@@ -5,10 +5,15 @@ import { CustomValidatorService } from 'src/app/shared/service/custom-validator.
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthService } from 'src/app/auth/service/auth.service';
+import { BehaviorSubject } from 'rxjs';
 class MockUsersServices{
   validateAreEqual(){
     return 
   }
+}
+class MockAuth{
+  message =new BehaviorSubject<any>({})
 }
 describe('ChangePasswordComponent', () => {
   let component: ChangePasswordComponent;
@@ -18,6 +23,7 @@ describe('ChangePasswordComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ ChangePasswordComponent ],
       providers:[
+        {provide:AuthService,useClass:MockAuth},
         {provide:CustomValidatorService,useClass:MockUsersServices}
       ],
       imports:[
