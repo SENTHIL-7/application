@@ -120,8 +120,6 @@ export class EmployeeRegistrationComponent implements OnInit, FormCanDeactivate 
         this.employeeService.createEmployee(this.employeeRegistrationForm.value).subscribe((res: any) => {
           // this.loader = false;
           if (res) {
-            console.log('res :', res);
-
             this.employeeRegistrationForm.reset();
             this.snackbarService.openSnackbar({
               message: this.message.DATA_SAVE,

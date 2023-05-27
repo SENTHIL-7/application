@@ -58,13 +58,7 @@ export class EmployeeTableComponent {
       { name: 'description', toolTip: 'view', method: 'onView' }
     ];
 
-    this.employeeService.getEmployees().subscribe((res: any) => {
-      this.data = {
-        datas: res.response,
-        columns: this.columns,
-        actions: this.actionArr
-      }
-    })
+    this.getEmployee()
   }
   getEmployee() {
     this.employeeService.getEmployees().subscribe((res: any) => {
