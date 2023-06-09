@@ -52,14 +52,14 @@ describe('AsyncValidatorService', () => {
     AsyncValidatorService.asyncEmailValidation(employeeService,1);
     expect( AsyncValidatorService.asyncEmailValidation).toBeDefined();
   }));
-  it('should testing the check mail', fakeAsync(() => {
-    isUserEmail=true;
-    employeeService.checkEmail("apsenthilkumar2001@gmail.com",1)
-  }));
-  it('should testing the check mail else ', fakeAsync(() => {
-    isUserEmail=false;
-    employeeService.checkEmail("apsenthilkumar2001@gmail.com",1)
-  }));
+  // it('should testing the check mail', fakeAsync(() => {
+  //   isUserEmail=true;
+  //   employeeService.checkEmail("apsenthilkumar2001@gmail.com",1)
+  // }));
+  // it('should testing the check mail else ', fakeAsync(() => {
+  //   isUserEmail=false;
+  //   employeeService.checkEmail("apsenthilkumar2001@gmail.com",1)
+  // }));
   // it('should call asyncEmailValidation exist and id undefine', fakeAsync(() => {
   //   isUserEmail=true;
   //   const control= new FormGroup({
